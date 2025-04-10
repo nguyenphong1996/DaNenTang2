@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-nativ
 import { AntDesign, Entypo } from "@expo/vector-icons";
 
 
-export const InputField = ({ placeholder, icon, value, onChangeText }) => {
+export const InputField = ({ placeholder, icon, value, onChangeText, keyboardType, secureTextEntry }) => {
     return (
         <View style={styles.inputContainer}>
             <TextInput
@@ -11,11 +11,14 @@ export const InputField = ({ placeholder, icon, value, onChangeText }) => {
                 style={styles.input}
                 value={value}
                 onChangeText={onChangeText}
+                keyboardType={keyboardType}
+                secureTextEntry={secureTextEntry}
             />
             {icon && icon}
         </View>
     );
 };
+
 
 
 export const SocialLogin = ({ onGooglePress, onFacebookPress }) => {

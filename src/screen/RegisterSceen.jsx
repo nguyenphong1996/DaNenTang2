@@ -1,12 +1,15 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, Alert } from "react-native";
-import { InputField, SocialLogin, Policy, Button, RegisterLink, title } from "../component/Component";
+import { InputField, SocialLogin, Policy, Button, RegisterLink } from "../component/Component";
 
 const handleRegister = () => {
     Alert.alert("Bạn đã nhấn đăng nhập!");
 };
-
-export default function WellComeSceen() {
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [phone, setPhone] = useState("");
+const [password, setPassword] = useState("");
+export default function RegisterScreen() {
     return (
         <View style={styles.container}>
 
@@ -20,10 +23,10 @@ export default function WellComeSceen() {
             <View style={styles.formContainer}>
                 <Text style={styles.welcomeText}>Đăng ký</Text>
                 <Text style={styles.subText}>Tạo tài khoản</Text>
-                <InputField placeholder="Họ tên" />
-                <InputField placeholder="E-mail" />
-                <InputField placeholder="Số điện thoại" />
-                <InputField placeholder="Mật khẩu" />
+                <InputField placeholder="Họ tên" value={name} onChangeText={setName} />
+                <InputField placeholder="E-mail" value={email} onChangeText={setEmail} />
+                <InputField placeholder="Số điện thoại" value={phone} onChangeText={setPhone} />
+                <InputField placeholder="Mật khẩu" value={password} onChangeText={setPassword} />
                 <Policy />
                 <Button title={"Đăng nhập"}
                     onPress={handleRegister} />
