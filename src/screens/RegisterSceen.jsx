@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, Alert } from "react-native";
-import { InputField, SocialLogin, Policy, Button, RegisterLink } from "../component/Component";
+import { InputField, SocialLogin, Policy, Button, RegisterLink } from "../components/Component";
 
 const handleRegister = () => {
     Alert.alert("Bạn đã nhấn đăng nhập!");

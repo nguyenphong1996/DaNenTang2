@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { InputField, SocialLogin, RememberMe, Button, RegisterLink } from "../component/Component";
+import { InputField, SocialLogin, RememberMe, Button, RegisterLink } from "../components/Component";
 
 const handleLogin = () => {
     Alert.alert("Thông báo", "Bạn đã nhấn đăng nhập!");

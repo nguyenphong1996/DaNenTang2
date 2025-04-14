@@ -1,11 +1,11 @@
 import { View, ScrollView } from "react-native";
-import WellComeSceen from '../src/screen/WellComeSceen'
-import RegisterSceen from '../src/screen/RegisterSceen'
+import LoginScreen from '../src/screens/LoginSceen'
+import RegisterSceen from '../src/screens/RegisterSceen'
 
 export default function Index() {
   return (
     <ScrollView style={{ flex: 1 }}>
-      <RegisterSceen />
+      <LoginScreen />
     </ScrollView>
   );
 }
