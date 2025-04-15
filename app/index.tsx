@@ -1,6 +1,6 @@
 import { View, ScrollView } from "react-native";
-import LoginScreen from '../src/screens/LoginSceen'
-import RegisterSceen from '../src/screens/RegisterSceen'
+import LoginScreen from '../src/screens/LoginScreen'
+
 
 export default function Index() {
   return (

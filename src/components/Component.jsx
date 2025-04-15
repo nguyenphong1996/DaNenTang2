@@ -19,8 +19,6 @@ export const InputField = ({ placeholder, icon, value, onChangeText, keyboardTyp
     );
 };
 
-
-
 export const SocialLogin = ({ onGooglePress, onFacebookPress }) => {
     return (
         <View style={styles.socialContainer}>
@@ -52,7 +50,6 @@ export const RememberMe = () => {
     );
 };
 
-
 export const Button = ({ title, onPress }) => {
     return (
         <TouchableOpacity style={styles.loginButton} onPress={onPress}>
@@ -61,16 +58,17 @@ export const Button = ({ title, onPress }) => {
     );
 };
 
-export const RegisterLink = ({ question, action }) => {
+export const RegisterLink = ({ question, action, onPress = () => {} }) => {
     return (
-        <View style={styles.registerContainer}>
-            <Text style={styles.rememberText}>{question}</Text>
-            <TouchableOpacity>
-                <Text style={styles.registerText}>{action}</Text>
-            </TouchableOpacity>
-        </View>
+      <View style={styles.registerContainer}>
+        <Text style={styles.rememberText}>{question}</Text>
+        <TouchableOpacity onPress={onPress}>
+          <Text style={styles.registerText}>{action}</Text>
+        </TouchableOpacity>
+      </View>
     );
 };
+
 
 
 export const Policy = () => {
@@ -84,8 +82,6 @@ export const Policy = () => {
         </View>
     );
 };
-
-
 
 const styles = StyleSheet.create({
     policyContainer: {
@@ -179,6 +175,4 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginLeft: 5,
     },
-
 });
-
