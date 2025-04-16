@@ -12,20 +12,24 @@ export default function RegisterScreen() {
 
   const handleRegister = async () => {
     try {
-      const res = await fetch("w", {
+      console.log({ name, email, phone, password });
+
+      const res = await fetch("http://localhost:3000/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, password }),
       });
+
       const data = await res.json();
 
       if (res.ok) {
-        Alert.alert("✅ Thành công", "Đăng ký thành công!", [
-          {
-            text: "OK",
-            onPress: () => router.push("/"), // Quay lại trang Login bằng Expo Router
-          },
-        ]);
+        Alert.alert("✅ Thành công", "Đăng ký thành công!");
+
+        // Delay 500ms rồi chuyển sang Login
+        setTimeout(() => {
+          router.replace("/login");
+        }, 500);
+
       } else {
         Alert.alert("❌ Lỗi", data.message || "Không thể đăng ký");
       }
@@ -51,9 +55,9 @@ export default function RegisterScreen() {
         <Button title="Đăng ký" onPress={handleRegister} />
         <SocialLogin />
         <RegisterLink
-        question="Bạn đã có tài khoản?"
-        action="Đăng nhập"
-        onPress={() => router.push("/")}
+          question="Bạn đã có tài khoản?"
+          action="Đăng nhập"
+          onPress={() => router.push("/")}
         />
       </View>
     </View>
